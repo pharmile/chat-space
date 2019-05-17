@@ -28,13 +28,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|email|string|null: false, unique: true|
-|password|string|null: false|
 
 ### Association
 
 - has_many :messages
 - has_many :groups, through: :group_members
+- has_many :group_members
 
 ## groupsテーブル
 
@@ -46,6 +45,7 @@ Things you may want to cover:
 
 - has_many :messages
 - has_many :users, through: :group_members
+- has_many :group_members
 
 ## messagesテーブル
 
@@ -55,7 +55,6 @@ Things you may want to cover:
 |group_id|integer|null :false, foreign_key :true|
 |body|text|
 |image|string|
-|date|timestamp|null :false|
 
 ### Association
 
